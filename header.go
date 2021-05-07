@@ -64,7 +64,7 @@ func (h Header) Type() string {
 // HeaderFlag returns a global default header flag.
 func HeaderFlag() *Header {
 	h := &Header{}
-	pflag.CommandLine.VarP(h, NameLong, NameShort, Help)
+	HeaderFlagP(h)
 	return h
 }
 
