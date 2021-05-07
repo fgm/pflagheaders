@@ -1,5 +1,7 @@
 # HTTP Headers for spf13/pflag
 
+[![fgm](https://circleci.com/gh/fgm/pflagheaders.svg?style=shield)](https://github.com/fgm/pflagheaders)
+
 This package allows use of repeated CLI flags defining HTTP headers, like:
 
 ## CLI usage
