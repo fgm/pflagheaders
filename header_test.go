@@ -59,7 +59,7 @@ func TestHeaderFlag(t *testing.T) {
 		t.Fatalf("Expected non-nil Header")
 	}
 	err := fs.Parse([]string{"-H", "key: value"})
-	if err !=  nil {
+	if err != nil {
 		t.Fatalf("Expected no error, got %v", err)
 	}
 	// Keys are normalized, so
