@@ -12,7 +12,9 @@ jobs:
             - go-mod-v4-{{ checksum "go.sum" }}
       - run:
           name: Install Dependencies
-          command: go mod download
+          command: |
+            go mod download
+            mkdir -p /tmp/artifacts
       - save_cache:
           key: go-mod-v4-{{ checksum "go.sum" }}
           paths:
@@ -22,5 +24,16 @@ jobs:
           command: |
             mkdir -p /tmp/test-reports
             gotestsum --junitfile /tmp/test-reports/unit-tests.xml
+      - run:
+          name: Test and generate atomic coverage
+          command: |
+            go test -race -covermode=atomic -coverprofile=coverage.txt
+            go tool cover -html=coverage.txt -o coverage.html
+            mv coverage.html /tmp/artifacts
+      - run:
+          name: Upload coverage to Codecov
+          command: bash <(curl -s https://codecov.io/bash)
       - store_test_results:
           path: /tmp/test-reports
+      - store_artifacts:
+          path: /tmp/artifacts
