@@ -69,3 +69,10 @@ func TestHeaderFlag(t *testing.T) {
 		t.Errorf("Expected %v, got %v", expected, actual)
 	}
 }
+
+func TestType(t *testing.T) {
+	var h pfh.Header
+	if h.Type() != pfh.Type {
+		t.Fail()
+	}
+}

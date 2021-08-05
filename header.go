@@ -17,6 +17,9 @@ const NameShort = "H"
 // Help is the recommended help string for header flags.
 const Help = `add a HTTP request Header. May be used multiple times, like -H "accept: text/plain" -H "Authorization : Bearer cn389ncoiwuencr"`
 
+// Type is the type expected by spf13/pflag for these data.
+const Type = "stringSlice"
+
 // ErrFormat is returned on ill-formatted header flag values.
 var ErrFormat = errors.New(`header value is not a "name: value" string`)
 
@@ -58,7 +61,7 @@ func (h *Header) Set(s string) error {
 
 // Type is part of pflag.Value.
 func (h Header) Type() string {
-	return "stringSlice"
+	return Type
 }
 
 // HeaderFlag returns a global default header flag.
