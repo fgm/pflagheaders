@@ -3,6 +3,7 @@
 [![fgm](https://circleci.com/gh/fgm/pflagheaders.svg?style=shield)](https://app.circleci.com/pipelines/github/fgm/pflagheaders)
 [![codecov](https://codecov.io/gh/fgm/pflagheaders/branch/main/graph/badge.svg?token=O6LQF0BGGF)](https://codecov.io/gh/fgm/pflagheaders)
 [![Go Report Card](https://goreportcard.com/badge/github.com/fgm/pflagheaders)](https://goreportcard.com/report/github.com/fgm/pflagheaders)
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/fgm/pflagheaders/badge)](https://securityscorecards.dev/viewer/?uri=github.com/fgm/pflagheaders)
 
 This package allows use of repeated CLI flags defining HTTP headers, like:
 
